@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <h1>Registration Page</h1>
+    <div class="conatiner">
+        
+    </div>
+    <form id="registerform">
+        <label>Enter New UserName</label> &nbsp; &nbsp;
+        <input type="text" id="uname" placeholder="Enter New Username" required>
+        <br><br>
+        <label>Enter New Password</label> &nbsp; &nbsp; &nbsp;
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <br><br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">&nbsp;&nbsp;
+        <br><br><br>
+        <a href="login.html">Click here to go login page</a>
+    </form>
+
+    <script>
+        document.getElementById("registerform").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var uname = document.getElementById("uname").value;
+            var password = document.getElementById("password").value;
+            localStorage.setItem("uname", uname);
+            localStorage.setItem("password", password);
+            window.location.href = "login.html"
+        })
+    </script>
+</body>
+
+</html>

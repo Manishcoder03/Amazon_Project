@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <h1>Login Page</h1>
+    <div class="container">
+        
+    </div>
+    <form id="loginform">
+        <label>Enter UserName</label> &nbsp; &nbsp;
+        <input type="text" id="loginuname" placeholder="Enter Username" required>
+        <br><br>
+        <label>Enter Password</label> &nbsp; &nbsp; &nbsp;
+        <input type="password" id="loginpassword" placeholder="Enter Password" required>
+        <br><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        document.getElementById("loginform").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var entereduname = document.getElementById("loginuname").value;
+            var enteredpassword = document.getElementById("loginpassword").value;
+
+            var storeduname = localStorage.getItem("uname");
+            var storedpassword = localStorage.getItem("password");
+
+            if (entereduname === storeduname && enteredpassword === storedpassword) {
+                alert("Login Successfully")
+                window.location.href = "index.html"
+            }
+            else {
+                alert("login failed")
+            }
+        })
+    </script>
+</body>
+
+</html>
